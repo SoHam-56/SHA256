@@ -56,8 +56,8 @@ module sha256_core
         for (int i = 0; i < 16; i++)
                 W[i] = msg_i[511-32*i -: 32];
                 
-        for (int i = 16; i < ROUNDS-1; i++)
-                W[i] = sigma1(W[i-2]) + W[i-7] + sigma0(W[i-15] + W[i-16]);
+        for (int i = 16; i < ROUNDS; i++)
+                W[i] = sigma1(W[i-2]) + W[i-7] + sigma0(W[i-15]) + W[i-16];
     end
     
     always_comb begin
@@ -83,9 +83,7 @@ module sha256_core
             end
             
             COMPUTE: begin
-//                automatic logic [WORD_SIZE-1:0] T1[PARALLEL], T2[PARALLEL];
-                automatic logic [WORD_SIZE-1:0] T1[PARALLEL];
-                automatic logic [WORD_SIZE-1:0] T2[PARALLEL];
+                automatic logic [WORD_SIZE-1:0] T1[PARALLEL], T2[PARALLEL];
                 automatic logic [WORD_SIZE-1:0] a, b, c, d, e, f, g, h;
                 
                 a = wv[0]; b = wv[1]; c = wv[2]; d = wv[3];

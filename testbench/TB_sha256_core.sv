@@ -34,10 +34,10 @@ module TB_sha256_core;
     test_case_t test_case[] = '{
         // Test Case 1: Empty string
         '{
-            in:  512'h0,
+            in:  512'h80000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
             out: 256'he3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
         },
-        
+
         // Test Case 2: "abc"
         '{
             in:  512'h61626380_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000018,
@@ -54,6 +54,7 @@ module TB_sha256_core;
             rstn = 1'b0;
             repeat(2) @(posedge clk);
             rstn = 1'b1;
+            repeat(2) @(posedge clk);
         end
     endtask
     
@@ -99,12 +100,13 @@ module TB_sha256_core;
         $display("Test Passed: %0d", tests_passed);
         $display("Test Failed: %0d", tests_failed);
         
-        #50 $finish; 
+        #500 $finish; 
     end
     
     initial begin
         repeat(10000) @(posedge clk);
         $display("\nWatch Dog Timed Out, Fix the Design hahahaha");
+        $finish;
     end
     
 endmodule

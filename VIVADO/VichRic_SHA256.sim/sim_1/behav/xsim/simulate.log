@@ -1,12 +1,10 @@
 Time resolution is 1 ps
-FAIL
-Expected: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-Got: xxxxxxxx7e06e96f87d4e57e6af1d1f5xxxxxxxxac554373a47d4c1352da52bb
+PASS
 FAIL
 Expected: ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
-Got: xxxxxxxx7e06e96f87d4e57e6af1d1f5xxxxxxxxac554373a47d4c1352da52bb
+Got: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 
-Test Summary at time               175000: 
-Test Passed: 0
-Test Failed: 2
-$finish called at time : 225 ns : File "/home/admin/Desktop/VichRec_SHA256/testbench/TB_sha256_core.sv" Line 102
+Test Summary at time               195000: 
+Test Passed: 1
+Test Failed: 1
+$finish called at time : 695 ns : File "/home/admin/Desktop/VichRec_SHA256/testbench/TB_sha256_core.sv" Line 103

@@ -38,7 +38,7 @@ package sha256_pkg;
     endfunction
     
     function automatic [WORD_SIZE-1:0] sum0 (input [WORD_SIZE-1:0] x);
-        return ({x[1:0], x[WORD_SIZE-1:2]} ^ {x[12:0], x[WORD_SIZE-1:12]} ^ {x[21:0], x[WORD_SIZE-1:22]});
+        return ({x[1:0], x[WORD_SIZE-1:2]} ^ {x[12:0], x[WORD_SIZE-1:13]} ^ {x[21:0], x[WORD_SIZE-1:22]});
     endfunction
     
     function automatic [WORD_SIZE-1:0] sum1 (input [WORD_SIZE-1:0] x);
@@ -46,11 +46,11 @@ package sha256_pkg;
     endfunction
     
     function automatic [WORD_SIZE-1:0] Ch (input [WORD_SIZE-1:0] x, y, z);
-        return (x & y) ^ (~x ^ z);
+        return (x & y) ^ (~x & z);
     endfunction
     
     function automatic [WORD_SIZE-1:0] Maj (input [WORD_SIZE-1:0] x, y, z);
-        return (x & y) ^ (x ^ z) ^ (y & z);
+        return (x & y) ^ (x & z) ^ (y & z);
     endfunction
     
 endpackage

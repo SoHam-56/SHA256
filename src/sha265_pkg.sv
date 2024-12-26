@@ -1,5 +1,6 @@
 package sha256_pkg;
-
+    
+    localparam BLOCK_SIZE = 256;
     localparam ROUNDS = 64, WORD_SIZE = 32, PARALLEL = 8;
     
     // K constants

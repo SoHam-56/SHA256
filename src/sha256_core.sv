@@ -4,10 +4,10 @@ module sha256_core
     import sha256_pkg::*;
 (
     input logic clk_i, rstn_i,
-    input logic start,
-    input logic [WORD_SIZE-1:0] msg_i,
-    output logic [WORD_SIZE-1:0] md_o,
-    output logic valid
+    input logic start_i,
+    input logic [(2*BLOCK_SIZE)-1:0] msg_i,
+    output logic [BLOCK_SIZE-1:0] md_o,
+    output logic valid_o
 );
 
     typedef enum logic [1:0] {
@@ -34,8 +34,7 @@ module sha256_core
         end else begin
             state <= next_state;
             if (state == COMPUTE) round_counter <= round_counter + PARALLEL;
-            else round_counter <= 'b0;
-            
+            else round_counter <= 'b0; 
         end
     end
     
@@ -45,13 +44,11 @@ module sha256_core
                 wv[i] <= 'b0;
                 hash[i] <= 'b0;
             end
-            valid <= 1'b0;
+            valid_o <= 1'b0;
         end else begin
-//            for (int i = 0; i < 8; i++)
-//                wv[i] <= next_wv[i];
             wv <= next_wv;
             hash <= next_hash;
-            valid <= next_valid;
+            valid_o <= next_valid;
         end      
     end
     
@@ -65,14 +62,14 @@ module sha256_core
     
     always_comb begin
         next_state = state;
-        next_valid = valid;
+        next_valid = valid_o;
         
         next_wv = wv;
         next_hash = hash;
         
         case (state)
             IDLE: begin
-                if(start) begin
+                if(start_i) begin
                     next_state = PREPARE;
                     next_valid = 1'b0;
                 end
@@ -86,11 +83,13 @@ module sha256_core
             end
             
             COMPUTE: begin
-                automatic logic [WORD_SIZE-1:0] T1[PARALLEL], T2[PARALLEL];
+//                automatic logic [WORD_SIZE-1:0] T1[PARALLEL], T2[PARALLEL];
+                automatic logic [WORD_SIZE-1:0] T1[PARALLEL];
+                automatic logic [WORD_SIZE-1:0] T2[PARALLEL];
                 automatic logic [WORD_SIZE-1:0] a, b, c, d, e, f, g, h;
                 
                 a = wv[0]; b = wv[1]; c = wv[2]; d = wv[3];
-                e = wv[0]; f = wv[1]; g = wv[6]; h = wv[7];
+                e = wv[4]; f = wv[5]; g = wv[6]; h = wv[7];
                 
                 for (int i = 0; i < PARALLEL; i++) begin
                     automatic int j = round_counter + i;
@@ -107,8 +106,8 @@ module sha256_core
                         a = T1[i] + T2[i];
                     end
                 end
-                next_wv[0] = a; next_wv[1] = b; next_wv[2] = b; next_wv[0] = d;
-                next_wv[4] = a; next_wv[5] = f; next_wv[6] = g; next_wv[7] = h;
+                next_wv[0] = a; next_wv[1] = b; next_wv[2] = c; next_wv[3] = d;
+                next_wv[4] = e; next_wv[5] = f; next_wv[6] = g; next_wv[7] = h;
                 
                 if (round_counter >= ROUNDS - PARALLEL)
                     next_state = FINALIZE;

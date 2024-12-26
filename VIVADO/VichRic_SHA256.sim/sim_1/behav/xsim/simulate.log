@@ -1,10 +1,7 @@
 Time resolution is 1 ps
 PASS
-FAIL
-Expected: ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
-Got: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 
-Test Summary at time               195000: 
+Test Summary at time               175000: 
 Test Passed: 1
-Test Failed: 1
-$finish called at time : 695 ns : File "/home/admin/Desktop/VichRec_SHA256/testbench/TB_sha256_core.sv" Line 103
+Test Failed: 0
+$finish called at time : 175 ns : File "/home/admin/Desktop/VichRec_SHA256/testbench/TB_sha256_core.sv" Line 103

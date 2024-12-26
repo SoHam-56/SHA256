@@ -1,0 +1,296 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Fri Dec 27 03:49:34 2024
+# Process ID: 82086
+# Current directory: /home/admin/Desktop/VichRec_SHA256/VIVADO/VichRic_SHA256.runs/synth_1
+# Command line: vivado -log sha256_core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sha256_core.tcl
+# Log file: /home/admin/Desktop/VichRec_SHA256/VIVADO/VichRic_SHA256.runs/synth_1/sha256_core.vds
+# Journal file: /home/admin/Desktop/VichRec_SHA256/VIVADO/VichRic_SHA256.runs/synth_1/vivado.jou
+# Running On        :archlinux
+# Platform          :Arch
+# Operating System  :Arch Linux
+# Processor Detail  :AMD Ryzen 5 5600U with Radeon Graphics
+# CPU Frequency     :3960.608 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :16073 MB
+# Swap memory       :4294 MB
+# Total Virtual     :20368 MB
+# Available Virtual :11526 MB
+#-----------------------------------------------------------
+source sha256_core.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /home/admin/Desktop/VichRec_SHA256/VIVADO/VichRic_SHA256.srcs/utils_1/imports/synth_1/sha256_core.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/admin/Desktop/VichRec_SHA256/VIVADO/VichRic_SHA256.srcs/utils_1/imports/synth_1/sha256_core.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top sha256_core -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Device 21-9227] Part: xc7a100tcsg324-1 does not have CEAM library.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 82180
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2149.125 ; gain = 422.715 ; free physical = 188 ; free virtual = 9600
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'sha256_core' [/home/admin/Desktop/VichRec_SHA256/src/sha256_core.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_core' (0#1) [/home/admin/Desktop/VichRec_SHA256/src/sha256_core.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2246.094 ; gain = 519.684 ; free physical = 192 ; free virtual = 9506
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2263.906 ; gain = 537.496 ; free physical = 193 ; free virtual = 9507
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2263.906 ; gain = 537.496 ; free physical = 193 ; free virtual = 9507
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2263.906 ; gain = 0.000 ; free physical = 193 ; free virtual = 9507
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/admin/Desktop/VichRec_SHA256/VIVADO/VichRic_SHA256.srcs/constrs_1/new/speed.xdc]
+WARNING: [Vivado 12-2489] -period contains time 66.666667 which will be rounded to 66.667 to ensure it is an integer multiple of 1 picosecond [/home/admin/Desktop/VichRec_SHA256/VIVADO/VichRic_SHA256.srcs/constrs_1/new/speed.xdc:1]
+Finished Parsing XDC File [/home/admin/Desktop/VichRec_SHA256/VIVADO/VichRic_SHA256.srcs/constrs_1/new/speed.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2409.656 ; gain = 0.000 ; free physical = 176 ; free virtual = 9487
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2409.656 ; gain = 0.000 ; free physical = 174 ; free virtual = 9486
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2409.656 ; gain = 683.246 ; free physical = 282 ; free virtual = 9478
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2417.660 ; gain = 691.250 ; free physical = 282 ; free virtual = 9478
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2417.660 ; gain = 691.250 ; free physical = 282 ; free virtual = 9478
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sha256_core'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+                 PREPARE |                               01 |                               01
+                 COMPUTE |                               10 |                               10
+                FINALIZE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sha256_core'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2417.660 ; gain = 691.250 ; free physical = 277 ; free virtual = 9445
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input   32 Bit       Adders := 48    
+	   5 Input   32 Bit       Adders := 8     
+	   3 Input   32 Bit       Adders := 8     
+	   2 Input   32 Bit       Adders := 16    
+	   2 Input    7 Bit       Adders := 7     
+	   2 Input    6 Bit       Adders := 1     
++---XORs : 
+	   3 Input     32 Bit         XORs := 120   
+	   2 Input     32 Bit         XORs := 8     
++---Registers : 
+	               32 Bit    Registers := 16    
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 56    
+	   4 Input   32 Bit        Muxes := 8     
+	   2 Input    6 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2417.660 ; gain = 691.250 ; free physical = 420 ; free virtual = 9358
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
+|sha256_core | K          | 64x32         | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 2417.660 ; gain = 691.250 ; free physical = 420 ; free virtual = 9360
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+info: optimization accepted worst group hill climbing move (25042.0/oG. 160.0ps)
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:33 ; elapsed = 00:01:34 . Memory (MB): peak = 2835.980 ; gain = 1109.570 ; free physical = 321 ; free virtual = 9045
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:45 ; elapsed = 00:01:47 . Memory (MB): peak = 2835.980 ; gain = 1109.570 ; free physical = 316 ; free virtual = 9039
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:48 ; elapsed = 00:01:50 . Memory (MB): peak = 2835.980 ; gain = 1109.570 ; free physical = 320 ; free virtual = 9043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:48 ; elapsed = 00:01:50 . Memory (MB): peak = 2835.980 ; gain = 1109.570 ; free physical = 320 ; free virtual = 9043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 2835.980 ; gain = 1109.570 ; free physical = 324 ; free virtual = 9047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 2835.980 ; gain = 1109.570 ; free physical = 324 ; free virtual = 9047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 2835.980 ; gain = 1109.570 ; free physical = 324 ; free virtual = 9047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 2835.980 ; gain = 1109.570 ; free physical = 324 ; free virtual = 9047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   704|
+|3     |LUT1   |   137|
+|4     |LUT2   |   616|
+|5     |LUT3   |   711|
+|6     |LUT4   |   654|
+|7     |LUT5   |  5034|
+|8     |LUT6   |  2491|
+|9     |MUXF7  |   256|
+|10    |FDCE   |   541|
+|11    |IBUF   |   515|
+|12    |OBUF   |   257|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 2835.980 ; gain = 1109.570 ; free physical = 324 ; free virtual = 9047
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:47 ; elapsed = 00:01:49 . Memory (MB): peak = 2835.980 ; gain = 963.820 ; free physical = 322 ; free virtual = 9046
+Synthesis Optimization Complete : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 2835.988 ; gain = 1109.570 ; free physical = 322 ; free virtual = 9046
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2835.988 ; gain = 0.000 ; free physical = 595 ; free virtual = 9321
+INFO: [Netlist 29-17] Analyzing 960 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'sha256_core' is not ideal for floorplanning, since the cellview 'sha256_core' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2892.008 ; gain = 0.000 ; free physical = 600 ; free virtual = 9326
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: dfc22f4a
+INFO: [Common 17-83] Releasing license: Synthesis
+25 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:56 ; elapsed = 00:01:56 . Memory (MB): peak = 2892.008 ; gain = 1486.605 ; free physical = 600 ; free virtual = 9326
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2486.881; main = 2119.870; forked = 429.826
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3865.102; main = 2892.012; forked = 1029.117
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2916.020 ; gain = 0.000 ; free physical = 595 ; free virtual = 9328
+INFO: [Common 17-1381] The checkpoint '/home/admin/Desktop/VichRec_SHA256/VIVADO/VichRic_SHA256.runs/synth_1/sha256_core.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file sha256_core_utilization_synth.rpt -pb sha256_core_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 27 03:51:38 2024...

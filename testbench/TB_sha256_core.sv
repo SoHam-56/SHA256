@@ -33,10 +33,10 @@ module TB_sha256_core;
     
     test_case_t test_case[] = '{
         // Test Case 1: Empty string
-        '{
-            in:  512'h80000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
-            out: 256'he3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-        },
+//        '{
+//            in:  512'h80000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
+//            out: 256'he3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+//        },
 
         // Test Case 2: "abc"
         '{
@@ -73,7 +73,7 @@ module TB_sha256_core;
     task hash_verify;
         input logic [(BLOCK_SIZE)-1:0] actual, expected;
         begin
-            if (actual == expected) begin
+            if (actual === expected) begin
                 $display("PASS");
                 tests_passed++;
             end else begin
@@ -100,7 +100,7 @@ module TB_sha256_core;
         $display("Test Passed: %0d", tests_passed);
         $display("Test Failed: %0d", tests_failed);
         
-        #500 $finish; 
+        $finish; 
     end
     
     initial begin

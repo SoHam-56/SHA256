@@ -23,7 +23,7 @@ package sha256_pkg;
     };
     
     // Initial Hash Values
-    localparam [WORD_SIZE-1:0] H [0:63] = '{
+    localparam [WORD_SIZE-1:0] H [0:7] = '{
         32'h6a09e667, 32'hbb67ae85, 32'h3c6ef372, 32'ha54ff53a,
         32'h510e527f, 32'h9b05688c, 32'h1f83d9ab, 32'h5be0cd19
     };

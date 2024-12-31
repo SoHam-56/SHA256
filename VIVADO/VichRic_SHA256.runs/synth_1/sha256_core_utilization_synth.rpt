@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-| Date         : Fri Dec 27 03:51:38 2024
+| Date         : Tue Dec 31 21:05:23 2024
 | Host         : archlinux running 64-bit Arch Linux
 | Command      : report_utilization -file sha256_core_utilization_synth.rpt -pb sha256_core_utilization_synth.pb
 | Design       : sha256_core

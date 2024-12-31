@@ -1,7 +1,8 @@
 Time resolution is 1 ps
 PASS
+PASS
 
-Test Summary at time               175000: 
-Test Passed: 1
+Test Summary at time               295000: 
+Test Passed: 2
 Test Failed: 0
-$finish called at time : 175 ns : File "/home/admin/Desktop/VichRec_SHA256/testbench/TB_sha256_core.sv" Line 103
+$finish called at time : 295 ns : File "/home/admin/Desktop/VichRec_SHA256/testbench/TB_sha256_core.sv" Line 103

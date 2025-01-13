@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1736745315" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/sha256_core.dcp">
+<GenRun Id="synth_12_parallel" LaunchPart="xc7a100tcsg324-1" LaunchTime="1736745304">
   <File Type="RDS-DCP" Name="sha256_core.dcp"/>
   <File Type="RDS-UTIL-PB" Name="sha256_core_utilization_synth.pb"/>
   <File Type="PA-TCL" Name="sha256_core.tcl"/>

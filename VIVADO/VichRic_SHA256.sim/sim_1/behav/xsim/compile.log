@@ -1,5 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/admin/Desktop/VichRec_SHA256/src/sha265_pkg.sv" into library xil_defaultlib
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/admin/Desktop/VichRec_SHA256/src/sha256_core.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module sha256_core
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/admin/Desktop/VichRec_SHA256/testbench/TB_sha256_core.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module TB_sha256_core

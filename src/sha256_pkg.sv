@@ -1,7 +1,9 @@
+`timescale 1ns / 100ps
+
 package sha256_pkg;
     
     localparam BLOCK_SIZE = 256;
-    localparam ROUNDS = 64, WORD_SIZE = 32, PARALLEL = 12;
+    localparam ROUNDS = 64, WORD_SIZE = 32, PARALLEL = 6;
     
     // K constants
     localparam [WORD_SIZE-1:0] K [0:63] = '{

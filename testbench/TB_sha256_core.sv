@@ -55,13 +55,7 @@ module TB_sha256_core;
             in:  512'h68656c6c_6f204920_616d2053_6f68616d_2c207468_69732076_65726966_69657320_6d792061_73736967_6e6d656e_74800000_00000000_00000000_00000000_00000168,
             out: 256'hdbe2e78fbfe236eef9872cc4b1718e8baf85776255cfe362ec821afdb55956fc
         },
-            // This message length will require two slice iteration, the assignment required to take only single slice message, i.e, i = 1
-//        // Test Case 5: "Hi hello I am Soham, this verifies my assignment. bye Bye"
-//        '{
-//            in:  512'h48692068_656c6c6f_20492061_6d20536f_68616d2c_20746869_73207665_72696669_6573206d_79206173_7369676e_6d656e74_2e206279_65204279_65800000_000001c0,
-//            out: 256'h09c07e90d1add0142a06dde08fa6ff5c03ede402b1a44e1d60b9f637251bccc2
-//        }
-         
+        
          // Test Case 5: "Hi hello I am Soham, this verifies my assignment. bye"
         '{
             in:  512'h48692068_656c6c6f_20492061_6d20536f_68616d2c_20746869_73207665_72696669_6573206d_79206173_7369676e_6d656e74_2e206279_65800000_00000000_000001a8,

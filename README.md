@@ -173,3 +173,4 @@ The project includes a Makefile for easy compilation and simulation using Verila
 ## Author
 
 Soham Pramanik
+[LinkedIn](https://www.linkedin.com/in/soham-pramanik-224004271/)

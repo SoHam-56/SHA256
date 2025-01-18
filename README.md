@@ -131,18 +131,44 @@ The implementation has been verified with the following test vectors:
 ## Getting Started
 
 ### Prerequisites
-- Xilinx Vivado (tested with version 2024.1)
-- Nexys A7-100T FPGA board
-- Basic understanding of SystemVerilog and FPGA design flow
+- Verilator (tested with version 5.020)
+- SystemVerilog compatible synthesis tool (e.g., Xilinx Vivado, Intel Quartus)
+- GNU Make
 
 ### Files Structure
 ```
 ├── src/
 │   ├── sha256_pkg.sv
 │   ├── sha256_core.sv
+├── testbench/
 │   └── TB_sha256_core.sv
+├── Makefile
 └── README.md
 ```
+
+### Build and Run
+The project includes a Makefile for easy compilation and simulation using Verilator:
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+
+2. Build and run the simulation:
+   ```bash
+   make run
+   ```
+
+3. To clean build artifacts:
+   ```bash
+   make clean
+   ```
+
+### Available Make Targets
+- `make build`: Verilates and builds the design
+- `make run`: Builds and runs the simulation (default target)
+- `make clean`: Removes all generated files and directories
 
 ## Author
 

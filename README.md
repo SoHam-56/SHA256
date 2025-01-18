@@ -131,8 +131,8 @@ The implementation has been verified with the following test vectors:
 ## Getting Started
 
 ### Prerequisites
-- Verilator (tested with version 5.020)
-- SystemVerilog compatible synthesis tool (e.g., Xilinx Vivado, Intel Quartus)
+- Verilator (tested with version 5.032) or Vivado (tested with version 2024.1)
+- SystemVerilog compatible synthesis tool
 - GNU Make
 
 ### Files Structure

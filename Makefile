@@ -17,6 +17,8 @@ TESTBENCH = TB_sha256_core.sv
 TOP_MODULE = TB_sha256_core
 BINARY_NAME = $(TOP_MODULE)_sim
 
+GEN_DIR = $(PRJ_DIR)/Verilator
+
 # Build flags
 VERILATOR_FLAGS = \
   --binary \
@@ -26,6 +28,7 @@ VERILATOR_FLAGS = \
   --sv \
   -I$(SRC_DIR) \
   -I$(TB_DIR) \
+  --Mdir $(GEN_DIR) \
   --Wno-WIDTHTRUNC \
   --Wno-WIDTHEXPAND \
   --Wno-LATCH
@@ -37,19 +40,18 @@ default: run
 build:
 	@echo "-- Verilator simulation for SHA256 Core"
 	@echo "-- VERILATE & BUILD --------"
+	@mkdir -p $(GEN_DIR)
 	$(VERILATOR) $(VERILATOR_FLAGS) \
 	  $(DESIGN_FILES) \
 	  $(TESTBENCH) \
 	  -o $(BINARY_NAME)
 	@echo "-- COMPILE -----------------"
-	make -C obj_dir -f V$(TOP_MODULE).mk
+	make -C $(GEN_DIR) -f V$(TOP_MODULE).mk
 
-# Run simulation
 run: build
 	@echo "-- RUN ---------------------"
-	./obj_dir/$(BINARY_NAME)
+	$(GEN_DIR)/./$(BINARY_NAME)
 	@echo "-- DONE --------------------"
 
-# Clean target
 clean:
-	-rm -rf obj_dir *.log *.dmp *.vpd core $(TOP_MODULE)_sim *.vcd
+	-rm -rf $(GEN_DIR) *.log *.dmp *.vpd core $(TOP_MODULE)_sim *.vcd

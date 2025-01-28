@@ -18,6 +18,9 @@ module sha256_core
     } state_t;
     
     state_t state, next_state;
+
+    logic [WORD_SIZE-1:0] T1[PARALLEL], T2[PARALLEL];
+    logic [WORD_SIZE-1:0] a, b, c, d, e, f, g, h;
     
     logic [WORD_SIZE-1:0] wv[8], next_wv[8];    
     logic [WORD_SIZE-1:0] W [0:ROUNDS-1];
@@ -34,7 +37,7 @@ module sha256_core
         end else begin
             state <= next_state;
             if (state == COMPUTE) round_counter <= round_counter + PARALLEL;
-            else round_counter <= 'b0; 
+            else round_counter <= 'b0;
         end
     end
     
@@ -66,7 +69,15 @@ module sha256_core
         
         next_wv = wv;
         next_hash = hash;
-        
+
+        for (int i = 0; i < PARALLEL; i++) begin
+            T1[i] = '0;
+            T2[i] = '0;
+        end
+
+        a = wv[0]; b = wv[1]; c = wv[2]; d = wv[3];
+        e = wv[4]; f = wv[5]; g = wv[6]; h = wv[7];
+
         case (state)
             IDLE: begin
                 if(start_i) begin
@@ -83,16 +94,10 @@ module sha256_core
             end
             
             COMPUTE: begin
-                automatic logic [WORD_SIZE-1:0] T1[PARALLEL], T2[PARALLEL];
-                automatic logic [WORD_SIZE-1:0] a, b, c, d, e, f, g, h;
-                
-                a = wv[0]; b = wv[1]; c = wv[2]; d = wv[3];
-                e = wv[4]; f = wv[5]; g = wv[6]; h = wv[7];
-                
+
                 for (int i = 0; i < PARALLEL; i++) begin
-                    automatic int j = round_counter + i;
-                    if (j < ROUNDS) begin
-                        T1[i] = h + Ch(e, f, g) + sum1(e) + W[j] + K[j];
+                    if (round_counter + i < ROUNDS) begin
+                        T1[i] = h + Ch(e, f, g) + sum1(e) + W[round_counter + i] + K[round_counter + i];
                         T2[i] = sum0(a) + Maj(a, b, c);
                         h = g;
                         g = f;

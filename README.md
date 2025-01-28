@@ -146,8 +146,8 @@ The implementation has been verified with the following test vectors:
 └── README.md
 ```
 
-### Build and Run
-The project includes a Makefile for easy compilation and simulation using Verilator:
+### Simulation
+The project includes a Makefile supporting multiple simulation tools:
 
 1. Clone the repository:
    ```bash
@@ -155,20 +155,17 @@ The project includes a Makefile for easy compilation and simulation using Verila
    cd <repository-name>
    ```
 
-2. Build and run the simulation:
+2. Run simulation with your preferred tool:
    ```bash
-   make run
+   make verilator    # For Verilator simulation
+   make iverilog     # For Icarus Verilog simulation
+   make vcs          # For Synopsys VCS simulation
    ```
 
-3. To clean build artifacts:
+3. Clean build artifacts:
    ```bash
    make clean
    ```
-
-### Available Make Targets
-- `make build`: Verilates and builds the design
-- `make run`: Builds and runs the simulation (default target)
-- `make clean`: Removes all generated files and directories
 
 ## Author
 

@@ -126,5 +126,11 @@ module TB_sha256_core;
         $display("\nWatch Dog Timed Out, Fix the Design hahahaha");
         $finish;
     end
+
+    // Waveform dumping
+    initial begin
+        $dumpfile("TB_sha256_core.vcd");
+        $dumpvars(0, TB_sha256_core);
+    end
     
 endmodule

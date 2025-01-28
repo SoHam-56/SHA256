@@ -8,12 +8,10 @@ This project implements the SHA256 hash algorithm in hardware using SystemVerilo
 
 ## Features
 
-- Full SHA256 hash function implementation
+- Fully verified SHA256 hash function implementation
 - Single-block message processing (512 bits)
-- Parallel computation (6 rounds in parallel)
-- Parameterized design using package definitions
+- Parameterized parallel round computation
 - Four-state FSM control logic
-- Synchronous reset
 - Valid output signal indicating hash completion
 - Comprehensive testbench with multiple test vectors
 

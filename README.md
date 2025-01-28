@@ -149,8 +149,8 @@ The project includes a Makefile supporting multiple simulation tools:
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-name>
+   git clone https://github.com/SoHam-56/SHA256.git
+   cd SHA256
    ```
 
 2. Run simulation with your preferred tool:

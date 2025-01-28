@@ -71,7 +71,7 @@ module sha256_core (
     input  logic                 clk_i,    // Clock input
     input  logic                 rstn_i,   // Active-low reset
     input  logic                 start_i,  // Start signal
-    input  logic [1023:0]        msg_i,    // Message input (512-bit block)
+    input  logic [511:0]         msg_i,    // Message input (512-bit block)
     output logic [255:0]         md_o,     // Message digest output
     output logic                 valid_o   // Output valid signal
 );
